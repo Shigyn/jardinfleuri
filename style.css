@@ -313,3 +313,23 @@ body { position: relative; }
 .p12 path, .p14 path { fill: #b9a6d6; }
 .p13 path:first-child { fill: #d9a441; }
 .p16 path:first-child { fill: var(--feuille); }
+
+/* Pages SEO : fil d'Ariane, en-tete de page, FAQ */
+.ariane { max-width: 1320px; margin: 0 auto; padding: 18px var(--bord) 0; display: flex; gap: 8px; font-size: .82rem; color: var(--gris); }
+.ariane a { color: var(--gris); text-decoration: none; }
+.ariane a::after { content: "›"; margin-left: 8px; color: var(--rose); }
+.ariane span { color: var(--fougere); font-weight: 600; }
+.page-entete { max-width: 860px; margin: 0 auto; padding: clamp(36px, 6vw, 80px) var(--bord) clamp(40px, 6vw, 72px); text-align: center; }
+.page-entete h1 { font-size: clamp(2.4rem, 1.6rem + 3.4vw, 4.2rem); color: var(--fougere); }
+.page-entete > p:not(.sur-titre) { margin: 18px auto 28px; color: var(--gris); font-size: 1.08rem; max-width: 36em; }
+.faq { padding: clamp(56px, 8vw, 100px) var(--bord); max-width: 920px; margin: 0 auto; }
+.faq-titre { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.6rem); color: var(--fougere); text-align: center; margin-bottom: 26px; }
+.faq-liste { display: grid; gap: 12px; }
+.faq details { background: var(--planche); border: 1px solid var(--trait); border-radius: var(--rayon); padding: 4px 22px; transition: border-color .3s; }
+.faq details[open] { border-color: var(--feuille); }
+.faq summary { cursor: pointer; list-style: none; padding: 16px 30px 16px 0; position: relative; font-weight: 600; color: var(--encre); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font: 400 1.6rem/1 var(--affiche); color: var(--rose); transition: transform .3s; }
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq details p { color: var(--gris); padding-bottom: 18px; }
+.menu a[aria-current="page"] { color: var(--fougere); border-bottom-color: var(--rose); }

@@ -53,7 +53,7 @@
       afficher(b.getAttribute('data-cat'));
     });
   });
-  afficher('sechees');
+  if (liste) afficher('sechees');
 
   // En-tete et menu mobile.
   var tete = $('[data-tete]'), burger = $('[data-burger]'), menu = $('[data-menu]');
