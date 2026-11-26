@@ -283,3 +283,22 @@ p { margin: 0; }
   100% { opacity: 0; transform: translate(20px, 108vh) rotate(320deg); }
 }
 @media (max-width: 860px) { .p5, .p6 { display: none; } }
+
+/* Feuilles accrochees a la page (elles defilent avec le contenu), derriere le texte et les blocs */
+body { position: relative; }
+.petales { position: absolute; inset: 0; z-index: -1; }
+.p1 { top: 2%; left: 6%; }   .p2 { top: 4%; left: 46%; }  .p3 { top: 14%; left: 90%; }
+.p4 { top: 24%; left: 12%; } .p5 { top: 38%; left: 82%; } .p6 { top: 50%; left: 30%; }
+.p7 { top: 62%; left: 70%; width: 15px; height: 22px; animation-duration: 20s; animation-delay: 4s; }
+.p8 { top: 72%; left: 8%; width: 12px; height: 18px; animation-duration: 24s; animation-delay: 10s; }
+.p9 { top: 82%; left: 55%; width: 14px; height: 14px; animation-duration: 18s; animation-delay: 7s; }
+.p10 { top: 90%; left: 92%; width: 13px; height: 19px; animation-duration: 22s; animation-delay: 2s; }
+.p8 path:first-child { fill: var(--feuille); }
+@keyframes tombe-site {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+  12% { opacity: .55; }
+  50% { transform: translate(28px, 45vh) rotate(150deg); }
+  88% { opacity: .45; }
+  100% { opacity: 0; transform: translate(-12px, 90vh) rotate(300deg); }
+}
+@media (max-width: 860px) { .p5, .p6 { display: block; } .p3, .p9 { display: none; } }
