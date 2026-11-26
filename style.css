@@ -270,3 +270,16 @@ p { margin: 0; }
   .souligne path { stroke-dashoffset: 0; }
   .herbier { transform: none; }
 }
+
+/* Feuilles et petales sur tout le site : calque fixe, discret, ne gene pas les clics */
+.petales { position: fixed; inset: 0; z-index: 20; }
+.petale { animation-name: tombe-site; }
+@keyframes tombe-site {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+  10% { opacity: .5; }
+  35% { transform: translate(30px, 38vh) rotate(110deg); }
+  65% { transform: translate(-15px, 72vh) rotate(220deg); }
+  92% { opacity: .4; }
+  100% { opacity: 0; transform: translate(20px, 108vh) rotate(320deg); }
+}
+@media (max-width: 860px) { .p5, .p6 { display: none; } }
