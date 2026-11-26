@@ -63,6 +63,18 @@
   burger.addEventListener('click', function () { hauteur(); var o = menu.classList.toggle('ouvert'); burger.setAttribute('aria-expanded', o); });
   $$('a', menu).forEach(function (a) { a.addEventListener('click', function () { menu.classList.remove('ouvert'); burger.setAttribute('aria-expanded', 'false'); }); });
 
+  // Herbier : leger suivi de la souris (ordinateur seulement).
+  var herbier = $('[data-herbier]');
+  if (herbier && matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+    $('.hero').addEventListener('mousemove', function (e) {
+      var r = herbier.getBoundingClientRect();
+      var x = (e.clientX - (r.left + r.width / 2)) / innerWidth, y = (e.clientY - (r.top + r.height / 2)) / innerHeight;
+      herbier.style.setProperty('--px', (x * -18).toFixed(1) + 'px');
+      herbier.style.setProperty('--py', (y * -14).toFixed(1) + 'px');
+    });
+    $('.hero').addEventListener('mouseleave', function () { herbier.style.setProperty('--px', '0px'); herbier.style.setProperty('--py', '0px'); });
+  }
+
   // Revelations au defilement.
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {

@@ -211,3 +211,62 @@ p { margin: 0; }
   .js .revele { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* --- Animation du hero : planches qui flottent, petales qui tombent, trait qui se dessine --- */
+.hero { position: relative; }
+.hero-texte, .herbier { position: relative; z-index: 1; }
+.petales { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.petale { position: absolute; top: -40px; width: 18px; height: 26px; opacity: 0; animation: tombe linear infinite; }
+.petale path { fill: var(--rose); }
+.petale .nervure { fill: none; stroke: rgba(255,255,255,.55); stroke-width: 1; }
+.p1 { left: 8%; animation-duration: 17s; animation-delay: 1s; }
+.p2 { left: 34%; width: 14px; height: 20px; animation-duration: 21s; animation-delay: 6s; }
+.p2 path:first-child { fill: var(--feuille); }
+.p3 { left: 52%; width: 16px; height: 16px; animation-duration: 19s; animation-delay: 3s; }
+.p3 path { fill: #b9a6d6; }
+.p4 { left: 71%; width: 12px; height: 18px; animation-duration: 23s; animation-delay: 9s; }
+.p4 path:first-child { fill: #d9a441; }
+.p5 { left: 88%; width: 14px; height: 14px; animation-duration: 18s; animation-delay: 12s; }
+.p6 { left: 22%; width: 13px; height: 19px; animation-duration: 25s; animation-delay: 14s; }
+.p6 path:first-child { fill: var(--feuille); }
+@keyframes tombe {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+  8% { opacity: .55; }
+  50% { transform: translate(40px, 55vh) rotate(160deg); }
+  90% { opacity: .45; }
+  100% { opacity: 0; transform: translate(-20px, 110vh) rotate(320deg); }
+}
+
+/* Trait de pinceau sous « faites a la main » */
+.souligne { position: relative; display: inline-block; }
+.souligne svg { position: absolute; left: 0; bottom: -.12em; width: 100%; height: .32em; overflow: visible; }
+.souligne path { fill: none; stroke: var(--rose); stroke-width: 5; stroke-linecap: round; opacity: .55; stroke-dasharray: 320; stroke-dashoffset: 320; animation: trace 1.4s .9s cubic-bezier(.6,.1,.2,1) forwards; }
+@keyframes trace { to { stroke-dashoffset: 0; } }
+
+/* Planches : pose, puis flottement continu ; leger suivi de la souris */
+.herbier { transform: translate(var(--px, 0), var(--py, 0)); transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.planche-1.entree { animation: pose1 .9s .2s cubic-bezier(.2,.7,.2,1) both, flotte1 7s 1.3s ease-in-out infinite; }
+.planche-2.entree { animation: pose2 .9s .35s cubic-bezier(.2,.7,.2,1) both, flotte2 8s 1.4s ease-in-out infinite; }
+.planche-3.entree { animation: pose3 .9s .5s cubic-bezier(.2,.7,.2,1) both, flotte3 6.5s 1.6s ease-in-out infinite; }
+@keyframes flotte1 { 0%, 100% { transform: rotate(-3deg) translateY(0); } 50% { transform: rotate(-1.8deg) translateY(-9px); } }
+@keyframes flotte2 { 0%, 100% { transform: rotate(4deg) translateY(0); } 50% { transform: rotate(5.2deg) translateY(-7px); } }
+@keyframes flotte3 { 0%, 100% { transform: rotate(-1.5deg) translateY(0); } 50% { transform: rotate(-2.8deg) translateY(-11px); } }
+.planche { transition: box-shadow .3s; }
+.planche:hover { box-shadow: 0 1px 2px rgba(34,38,31,.08), 0 24px 44px -14px rgba(34,38,31,.38); z-index: 4; }
+.planche img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.planche:hover img { transform: scale(1.03); }
+
+/* Entretien de tombes : la photo suit la hauteur du texte, plus de vide */
+.tombes { grid-template-rows: auto auto; align-content: center; }
+.tombes-photo { position: relative; align-self: stretch; min-height: 380px; }
+.tombes-photo img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
+@media (max-width: 860px) {
+  .tombes-photo { min-height: 0; }
+  .tombes-photo img { position: static; aspect-ratio: 4 / 3; height: auto; }
+  .petale { width: 13px; height: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .petales { display: none; }
+  .souligne path { stroke-dashoffset: 0; }
+  .herbier { transform: none; }
+}

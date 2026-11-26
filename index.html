@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.weserv.nl">
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=2">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":["LocalBusiness","Florist"],"name":"Jardin Fleuri","founder":{"@type":"Person","name":"Kévin Alusse"},"description":"Fleuriste à Teillé : créations en fleurs séchées, compositions pour événements et deuil, entretien et fleurissement de tombes.","url":"https://shigyn.github.io/jardinfleuri/","telephone":"+33662354221","priceRange":"€","address":{"@type":"PostalAddress","streetAddress":"41 La Milsandière","postalCode":"44440","addressLocality":"Teillé","addressRegion":"Pays de la Loire","addressCountry":"FR"},"areaServed":[{"@type":"City","name":"Teillé"},{"@type":"City","name":"Ancenis-Saint-Géréon"},{"@type":"AdministrativeArea","name":"Pays d’Ancenis"},{"@type":"AdministrativeArea","name":"Loire-Atlantique"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"5"},"sameAs":["https://www.instagram.com/jardinfleuri44/","https://jardin-fleuri.sumupstore.com"],"knowsAbout":["Fleurs séchées","Art floral","Compositions de mariage","Fleurs de deuil","Entretien de tombes","Fleurissement de sépultures"]}
 </script>
@@ -44,9 +44,17 @@
 
 <main id="haut">
   <section class="hero">
+    <div class="petales" aria-hidden="true">
+      <svg class="petale p1" viewBox="0 0 20 30"><path d="M10 0C17 8 17 20 10 30C3 20 3 8 10 0z"/><path class="nervure" d="M10 3v25"/></svg>
+      <svg class="petale p2" viewBox="0 0 20 30"><path d="M10 0C17 8 17 20 10 30C3 20 3 8 10 0z"/><path class="nervure" d="M10 3v25"/></svg>
+      <svg class="petale p3" viewBox="0 0 20 20"><path d="M10 0c4 4 4 8 0 10c-4-2-4-6 0-10zM10 20c-4-4-4-8 0-10c4 2 4 6 0 10zM0 10c4-4 8-4 10 0c-2 4-6 4-10 0zM20 10c-4 4-8 4-10 0c2-4 6-4 10 0z"/></svg>
+      <svg class="petale p4" viewBox="0 0 20 30"><path d="M10 0C17 8 17 20 10 30C3 20 3 8 10 0z"/><path class="nervure" d="M10 3v25"/></svg>
+      <svg class="petale p5" viewBox="0 0 20 20"><path d="M10 0c4 4 4 8 0 10c-4-2-4-6 0-10zM10 20c-4-4-4-8 0-10c4 2 4 6 0 10zM0 10c4-4 8-4 10 0c-2 4-6 4-10 0zM20 10c-4 4-8 4-10 0c2-4 6-4 10 0z"/></svg>
+      <svg class="petale p6" viewBox="0 0 20 30"><path d="M10 0C17 8 17 20 10 30C3 20 3 8 10 0z"/><path class="nervure" d="M10 3v25"/></svg>
+    </div>
     <div class="hero-texte">
       <p class="sur-titre entree">Teillé · Pays d’Ancenis</p>
-      <h1 class="entree">Des fleurs qui durent, <em>faites à la main.</em></h1>
+      <h1 class="entree">Des fleurs qui durent, <em class="souligne">faites à la main.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14C60 6 120 4 180 8s90 6 116 2"/></svg></em></h1>
       <p class="hero-chapo entree">Créations en fleurs séchées, compositions pour vos mariages et vos hommages, entretien et fleurissement de tombes. Kévin, fleuriste diplômé, travaille tout sur commande.</p>
       <div class="hero-actions entree">
         <a class="bouton bouton-plein" href="#creations">Voir les créations</a>
@@ -58,7 +66,7 @@
         <li><b>Devis gratuit</b></li>
       </ul>
     </div>
-    <div class="herbier" aria-label="Quelques créations">
+    <div class="herbier" aria-label="Quelques créations" data-herbier>
       <figure class="planche planche-1 entree">
         <img src="https://images.weserv.nl/?url=images.sumup.com/img_4N6G8Q62889WSB9KRPHVYR36GS&w=720&output=webp&q=78" alt="Cadre fleuri en fleurs séchées orangées" fetchpriority="high">
         <figcaption><i>Cadre fleuri</i><span>fleurs séchées · 35 €</span></figcaption>
@@ -199,6 +207,6 @@
 
 <a class="flottant-tel" href="tel:+33662354221" aria-label="Appeler Jardin Fleuri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg></a>
 
-<script src="app.js?v=1" defer></script>
+<script src="app.js?v=2" defer></script>
 </body>
 </html>
